@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       ng-plugin
  * Plugin URI:        rickg.me
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       An angular app in wordpres
  * Version:           1.0.0
  * Author:            Rick G
  * Author URI:        rickg.me
