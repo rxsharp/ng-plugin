@@ -27,28 +27,14 @@
 	console.log( $stateParams );
 	Posts.get( { ID: $stateParams.id}, function(res){
 		$scope.post = res;
-	})
+	});
 }])
-
-.config( function( $stateProvider, $urlRouterProvider){
-	$urlRouterProvider.otherwise('/');
-	$stateProvider
-		.state( 'list', {
-			url: '/',
-			controller: 'ListCtrl',
-			templateUrl: appInfo.template_directory + 'app/templates/list.php'
-		})
-		.state( 'detail', {
-			url: '/posts/:id',
-			controller: 'DetailCtrl',
-			templateUrl: appInfo.template_directory + 'app/templates/detail.php'
-		})
-})
 
 .filter( 'to_trusted', ['$sce', function( $sce ){
 	return function( text ) {
 		return $sce.trustAsHtml( text );
-	}
+	};
 }]);
- }
-)();
+
+ 
+})();
