@@ -1,3 +1,4 @@
-body {
-    background-color: red;
+/*Set content to 100% of the view height*/
+.site-content {
+    height: 100vh;
 }
