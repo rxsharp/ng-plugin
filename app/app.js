@@ -1,18 +1,19 @@
-var wpApp = new angular.module( 'wpAngularTheme', [
+(function () {
+ angular.module( 'wpAngularTheme', [
 	'ui.router', 
 	'ngResource',
 	'ngAnimate',
 	'myDirectives'
 	
-	] );
+	] )
 
-wpApp.factory( 'Posts', function( $resource ) {
+.factory( 'Posts', function( $resource ) {
 	return $resource( appInfo.api_url + 'posts/:ID', {
 		ID: '@id'
 	})
-});
+})
 
-wpApp.controller( 'ListCtrl', ['$scope', 'Posts', function( $scope, Posts ) {
+.controller( 'ListCtrl', ['$scope', 'Posts', function( $scope, Posts ) {
 	console.log('ListCtrl');
 	$scope.page_title = 'Blog Listing Page';
 
@@ -20,16 +21,16 @@ wpApp.controller( 'ListCtrl', ['$scope', 'Posts', function( $scope, Posts ) {
 		$scope.posts = res;
 	});
 	
-}]);
+}])
 
-wpApp.controller( 'DetailCtrl', ['$scope', '$stateParams', 'Posts', function( $scope, $stateParams, Posts ) {
+.controller( 'DetailCtrl', ['$scope', '$stateParams', 'Posts', function( $scope, $stateParams, Posts ) {
 	console.log( $stateParams );
 	Posts.get( { ID: $stateParams.id}, function(res){
 		$scope.post = res;
 	})
 }])
 
-wpApp.config( function( $stateProvider, $urlRouterProvider){
+.config( function( $stateProvider, $urlRouterProvider){
 	$urlRouterProvider.otherwise('/');
 	$stateProvider
 		.state( 'list', {
@@ -42,10 +43,12 @@ wpApp.config( function( $stateProvider, $urlRouterProvider){
 			controller: 'DetailCtrl',
 			templateUrl: appInfo.template_directory + 'app/templates/detail.php'
 		})
-});
+})
 
-wpApp.filter( 'to_trusted', ['$sce', function( $sce ){
+.filter( 'to_trusted', ['$sce', function( $sce ){
 	return function( text ) {
 		return $sce.trustAsHtml( text );
 	}
-}])
+}]);
+ }
+)();
