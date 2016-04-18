@@ -9,3 +9,7 @@
 <h2 class="homeLinks">
     <a ui-sref="about">About</a>
 </h2>
+
+<h2 class="homeLinks">
+    <a ui-sref="contact">Contact</a>
+</h2>

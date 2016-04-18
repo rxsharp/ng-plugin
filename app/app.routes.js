@@ -13,6 +13,10 @@
 			url: '/about',
 			templateUrl: appInfo.template_directory + 'app/about/index.php'
 		})
+		.state( 'contact', {
+			url: '/contact',
+			templateUrl: appInfo.template_directory + 'app/contact/index.php'
+		})
 		.state( 'portfolioList', {
 			url: '/portfolio',
 			controller: 'ListCtrl',
