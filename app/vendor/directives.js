@@ -1,9 +1,9 @@
 (function () {
  angular.module('myDirectives', [])
-.directive('beaverContent', function() {
+.directive('postContent', function() {
   return {
     restrict: 'AE',
-    templateUrl: appInfo.template_directory + 'app/templates/' + 'beaverContent.php'
+    templateUrl: appInfo.template_directory + 'app/portfolio/' + 'postContent.php'
   };
 });
   

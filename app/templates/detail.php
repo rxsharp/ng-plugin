@@ -1,1 +1,0 @@
-<beaver-content></beaver-content>

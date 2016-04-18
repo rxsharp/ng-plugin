@@ -7,12 +7,12 @@
 		.state( 'list', {
 			url: '/',
 			controller: 'ListCtrl',
-			templateUrl: appInfo.template_directory + 'app/templates/list.php'
+			templateUrl: appInfo.template_directory + 'app/portfolio/list.php'
 		})
 		.state( 'detail', {
 			url: '/posts/:id',
 			controller: 'DetailCtrl',
-			templateUrl: appInfo.template_directory + 'app/templates/detail.php'
+			templateUrl: appInfo.template_directory + 'app/portfolio/individual.php'
 		});
 });
 
