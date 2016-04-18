@@ -9,6 +9,10 @@
 			controller: 'homeCtrl',
 			templateUrl: appInfo.template_directory + 'app/home/index.php'
 		})
+		.state( 'about', {
+			url: '/about',
+			templateUrl: appInfo.template_directory + 'app/about/index.php'
+		})
 		.state( 'portfolioList', {
 			url: '/portfolio',
 			controller: 'ListCtrl',
