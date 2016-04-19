@@ -13,6 +13,11 @@
 			url: '/about',
 			templateUrl: appInfo.template_directory + 'app/about/index.php'
 		})
+		.state( 'featured', {
+			url: '/featured',
+			controller: 'featuredCtrl',
+			templateUrl: appInfo.template_directory + 'app/featured/index.php'
+		})
 		.state( 'contact', {
 			url: '/contact',
 			templateUrl: appInfo.template_directory + 'app/contact/index.php'

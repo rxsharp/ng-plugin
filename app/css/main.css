@@ -1,4 +1,5 @@
 /*Set content to 100% of the view height*/
-.site-content {
+.homePage, .featuredPage {
     height: 100vh;
+    background: yellow;
 }

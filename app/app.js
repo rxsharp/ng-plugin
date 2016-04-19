@@ -30,8 +30,24 @@
 	});
 }])
 
-.controller( 'homeCtrl', ['$scope', function( $scope) {
+.controller( 'homeCtrl', ['$scope', '$window', '$location', function( $scope, $window, $location) {
 	$scope.title = "Site title";
+	angular.element($window).bind("scroll", function() {
+    var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+    var body = document.body, html = document.documentElement;
+    var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
+    windowBottom = windowHeight + window.pageYOffset;
+    if (windowBottom >= docHeight) {
+        console.log('homePage bottom');
+        $window.location.href = '/#/featured';
+    }
+});
+
+}])
+
+.controller( 'featuredCtrl', ['$scope', '$window', '$location', function( $scope, $window, $location) {
+	$scope.title = "Featured";
+
 }])
 
 .filter( 'to_trusted', ['$sce', function( $sce ){
