@@ -46,7 +46,11 @@
 }])
 
 .controller( 'featuredCtrl', ['$scope', '$window', '$location', function( $scope, $window, $location) {
-	$scope.title = "Featured";
+	$scope.title = function(yo) {
+		yo = $window;
+		$scope.results= $window.pageYOffset;
+	}
+	console.log($scope.title);
 
 }])
 
