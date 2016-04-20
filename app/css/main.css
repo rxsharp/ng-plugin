@@ -1,5 +1,13 @@
 /*Set content to 100% of the view height*/
-.homePage, .featuredPage {
+.homePage, .featuredPage, .aboutPage, .contactPage, .portfolioPage {
     height: 100vh;
     background: yellow;
+}
+
+.fader-animation.ng-enter,
+.fader-animation.ng-leave {
+    -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    -moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    -o-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
 }

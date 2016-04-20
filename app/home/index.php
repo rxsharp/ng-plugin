@@ -1,6 +1,7 @@
-<div class="homePage">
+<div class="homePage" homescroll>
 <div class="titleSection">
     <h1 class="title">{{title}}</h1>
+    <p class="sel">EL: {{ok}}</p>
 </div>
 
 <h2 class="homeLinks">

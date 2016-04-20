@@ -1,4 +1,4 @@
-<div class="contactPage">
+<div class="contactPage" contactscroll>
 <div class="contactSection">
     <h1 class="title">Contact</h1>
 </div>

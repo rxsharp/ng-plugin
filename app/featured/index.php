@@ -1,7 +1,6 @@
-<div class="featuredPage">
+<div class="featuredPage" featuredscroll>
 <div class="featuredSection">
-    <h1 class="title">Title: {{results}}</h1>
-    <button ng-click="title($window);">Button</button>
+    <h1 class="title">Title: {{title}}</h1>
 </div>
 
 <h2>
