@@ -1,11 +1,5 @@
 (function () {
- angular.module('myDirectives', [])
-.directive('postContent', function() {
-  return {
-    restrict: 'AE',
-    templateUrl: appInfo.template_directory + 'app/portfolio/' + 'postContent.php'
-  };
-})
+ angular.module('scrollDirectives', [])
 .directive("featuredscroll", function ($window, $document) {
     return function(scope, element, attrs) {
         console.log('scrollDebug');

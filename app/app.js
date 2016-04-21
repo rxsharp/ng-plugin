@@ -3,7 +3,9 @@
 	'ui.router', 
 	'ngResource',
 	'ngAnimate',
-	'myDirectives'
+	'postDirectives',
+	'scrollDirectives',
+	'navDirective'
 	
 	] )
 
@@ -31,7 +33,7 @@
 }])
 
 .controller( 'homeCtrl', ['$scope', '$window', '$location', function( $scope, $window, $location) {
-	$scope.title = "Site title";
+	$scope.title = "Wolf Nectar";
 	document.documentElement.scrollTop = document.body.scrollTop = 10;
 
 }])
