@@ -27,8 +27,7 @@
 	});
 }])
 
-.controller( 'homeCtrl', ['$scope', '$window', '$location', function( $scope, $window, $location) {
-	$scope.title = "Wolf Nectar";
+.controller( 'homeCtrl', ['$scope', '$http', function( $scope, $http) {
 	document.documentElement.scrollTop = document.body.scrollTop = 10;
 
 }])

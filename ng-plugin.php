@@ -91,7 +91,8 @@ function angular_scripts() {
 		wp_enqueue_script( 'routes', plugin_dir_url( __FILE__ ) . 'app/app.routes.js', array( 'ui-router' ), '1.0', true );
 		wp_localize_script( 'ngScripts', 'appInfo',
 			array(
-				'home_url'			 => '',
+				'home_url'			 => get_site_url() . '/',
+				'wp_json'			 => rest_get_url_prefix() . '/',
 				'api_url'			 => rest_get_url_prefix() . '/wp/v2/',
 				'template_directory' => plugin_dir_url( __FILE__ ) . '/',
 				'nonce'				 => wp_create_nonce( 'wp_rest' ),
