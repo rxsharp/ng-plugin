@@ -5,15 +5,10 @@
 	'ngAnimate',
 	'postDirectives',
 	'scrollDirectives',
-	'navDirective'
+	'navDirective',
+	'dataFactories'
 	
 	] )
-
-.factory( 'Posts', function( $resource ) {
-	return $resource( appInfo.api_url + 'posts/:ID', {
-		ID: '@id'
-	})
-})
 
 .controller( 'ListCtrl', ['$scope', 'Posts', function( $scope, Posts ) {
 	console.log('ListCtrl');
