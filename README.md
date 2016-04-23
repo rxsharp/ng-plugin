@@ -23,6 +23,12 @@ This app will act like a presentation file, listing the titles of the posts and 
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
 
+== Requirements ==
+
+### WP Rest API (Version 2)
+
+https://wordpress.org/plugins/rest-api/
+
 == Frequently Asked Questions ==
 
 When will this get finished? By the end of April 2016 is the plan.
