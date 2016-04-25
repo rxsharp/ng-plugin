@@ -32,10 +32,28 @@
 
 }])
 
-.controller( 'featuredCtrl', ['$scope', function( $scope) {
-	document.documentElement.scrollTop = document.body.scrollTop = 10;
-	$scope.title="featured"
-}])
+.controller( 'featuredCtrl', ['$http', '$rootScope', 'Posts', function($http, $rootScope, Posts) {
+  $http({ method: 'GET', url: appInfo.api_url + 'pages/?slug=home'})
+  .then(function successCallback(response) {
+        $rootScope.featuredPost = response.data[0].acf.featured_post;
+        console.log($rootScope.featuredPost.guid + 'FEATURED CONTROLLER');
+        
+   $rootScope.postThumb = Posts.get({ ID: $rootScope.featuredPost.ID }, function() {
+    console.log( $rootScope.postThumb.acf.featured_image + 'THUMBNAIL');
+  }); // get() returns a single entry     
+        
+        
+    
+  }, 
+    function errorCallback(response) {
+        console.log('Pages API failed to load');
+    })
+  
+  
+    
+    }
+    
+])
 
 .filter( 'to_trusted', ['$sce', function( $sce ){
 	return function( text ) {
