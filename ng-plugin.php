@@ -77,18 +77,18 @@ run_ng_plugin();
 // Hook in all the important things
 function angular_scripts() {
     // Get plugin stylesheet
-		wp_enqueue_style( 'angular-styles', plugin_dir_url( __FILE__ ) . 'app/css/main.css', array(), '0.1', 'all' );
-		wp_enqueue_script( 'angular', plugin_dir_url( __FILE__ ) . 'app/vendor/angular.js', array('jquery'), '0.1', false );
-		wp_enqueue_script( 'ui-router', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-ui-router.js', array('angular'), '0.1', false );
-		wp_enqueue_script( 'angular-resource', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-resource.js', array('angular'), '0.1', false );
-		wp_enqueue_script( 'angular-animate', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-animate.js', array('angular'), '0.1', false );
-		wp_enqueue_script( 'directive-posts', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.posts.js', array('angular'), '0.1', false );
-		wp_enqueue_script( 'directive-scrolls', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.scrolls.js', array('angular'), '0.1', false );
-		wp_enqueue_script( 'directive-nav', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.nav.js', array('angular'), '0.1', false );
-		wp_enqueue_script( 'factory-api', plugin_dir_url( __FILE__ ) . 'app/wp-api/data.factories.js', array('angular'), '0.1', false );
+		wp_enqueue_style( 'angular-styles', plugin_dir_url( __FILE__ ) . 'app/css/main.css', array(), '0.3', 'all' );
+		wp_enqueue_script( 'angular', plugin_dir_url( __FILE__ ) . 'app/vendor/angular.js', array('jquery'), '0.3', false );
+		wp_enqueue_script( 'ui-router', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-ui-router.js', array('angular'), '0.3', false );
+		wp_enqueue_script( 'angular-resource', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-resource.js', array('angular'), '0.3', false );
+		wp_enqueue_script( 'angular-animate', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-animate.js', array('angular'), '0.3', false );
+		wp_enqueue_script( 'directive-posts', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.posts.js', array('angular'), '0.3', false );
+		wp_enqueue_script( 'directive-scrolls', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.scrolls.js', array('angular'), '0.3', false );
+		wp_enqueue_script( 'directive-nav', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.nav.js', array('angular'), '0.3', false );
+		wp_enqueue_script( 'factory-api', plugin_dir_url( __FILE__ ) . 'app/wp-api/data.factories.js', array('angular'), '0.3', false );
 
-		wp_enqueue_script( 'ngScripts', plugin_dir_url( __FILE__ ) . 'app/app.js', array( 'ui-router' ), '1.0', true );
-		wp_enqueue_script( 'routes', plugin_dir_url( __FILE__ ) . 'app/app.routes.js', array( 'ui-router' ), '1.0', true );
+		wp_enqueue_script( 'ngScripts', plugin_dir_url( __FILE__ ) . 'app/app.js', array( 'ui-router' ), '1.2', true );
+		wp_enqueue_script( 'routes', plugin_dir_url( __FILE__ ) . 'app/app.routes.js', array( 'ui-router' ), '1.2', true );
 		wp_localize_script( 'ngScripts', 'appInfo',
 			array(
 				'home_url'			 => get_site_url() . '/',
