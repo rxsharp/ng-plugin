@@ -9,14 +9,20 @@
 	'dataFactories'
 	
 	] )
-
-.controller( 'ListCtrl', ['$scope', 'Posts', function( $scope, Posts ) {
-	console.log('ListCtrl');
-	$scope.page_title = 'Blog Listing Page';
-
+	
+// All cosole.log functions are for debugging purposes
+// The console.log functions will be removed in the production phase.
+.controller( 'ListCtrl', ['$scope', 'Posts', '$timeout', function( $scope, Posts, $timeout ) {
+	console.log('ListCtrl Start');
+	$scope.init = function() {
+		console.log('Init run');
+	}
 	Posts.query(function( res ) {
 		$scope.posts = res;
+		$scope.$broadcast('dataloaded');
+		console.log('Broadcast of dataloaded');
 	});
+	$scope.init();
 	
 }])
 
@@ -61,5 +67,8 @@
 	};
 }]);
 
+angular.element(document).ready(function () {
+    console.log('Doc Ready Function');
+});
  
 })();

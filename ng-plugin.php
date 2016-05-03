@@ -86,6 +86,7 @@ function angular_scripts() {
 		wp_enqueue_script( 'directive-scrolls', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.scrolls.js', array('angular'), '0.3', false );
 		wp_enqueue_script( 'directive-nav', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.nav.js', array('angular'), '0.3', false );
 		wp_enqueue_script( 'factory-api', plugin_dir_url( __FILE__ ) . 'app/wp-api/data.factories.js', array('angular'), '0.3', false );
+		wp_enqueue_script( 'scrollify', plugin_dir_url( __FILE__ ) . 'app/vendor/jquery.scrollify.js', array('jquery'), '0.1', false );
 
 		wp_enqueue_script( 'ngScripts', plugin_dir_url( __FILE__ ) . 'app/app.js', array( 'ui-router' ), '1.2', true );
 		wp_enqueue_script( 'routes', plugin_dir_url( __FILE__ ) . 'app/app.routes.js', array( 'ui-router' ), '1.2', true );
