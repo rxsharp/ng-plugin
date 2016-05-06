@@ -35,6 +35,7 @@
 
 .controller( 'homeCtrl', ['$scope', '$http', function( $scope, $http) {
 	document.documentElement.scrollTop = document.body.scrollTop = 10;
+	$scope.mouse= appInfo.template_directory;
 
 }])
 

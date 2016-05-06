@@ -88,14 +88,14 @@ function angular_scripts() {
 		wp_enqueue_script( 'factory-api', plugin_dir_url( __FILE__ ) . 'app/wp-api/data.factories.js', array('angular'), '0.3', false );
 		wp_enqueue_script( 'scrollify', plugin_dir_url( __FILE__ ) . 'app/vendor/jquery.scrollify.js', array('jquery'), '0.1', false );
 
-		wp_enqueue_script( 'ngScripts', plugin_dir_url( __FILE__ ) . 'app/app.js', array( 'ui-router' ), '1.2', true );
-		wp_enqueue_script( 'routes', plugin_dir_url( __FILE__ ) . 'app/app.routes.js', array( 'ui-router' ), '1.2', true );
+		wp_enqueue_script( 'ngScripts', plugin_dir_url( __FILE__ ) . 'app/app.js', array( 'ui-router' ), '1.3', true );
+		wp_enqueue_script( 'routes', plugin_dir_url( __FILE__ ) . 'app/app.routes.js', array( 'ui-router' ), '1.3', true );
 		wp_localize_script( 'ngScripts', 'appInfo',
 			array(
 				'home_url'			 => get_site_url() . '/',
 				'wp_json'			 => rest_get_url_prefix() . '/',
 				'api_url'			 => rest_get_url_prefix() . '/wp/v2/',
-				'template_directory' => plugin_dir_url( __FILE__ ) . '/',
+				'template_directory' => plugin_dir_url( __FILE__ ) . '',
 				'nonce'				 => wp_create_nonce( 'wp_rest' ),
 				'is_admin'			 => current_user_can('administrator')
 				

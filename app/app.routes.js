@@ -7,7 +7,7 @@
 		.state( 'home', {
 			url: '/',
 			controller: 'homeCtrl',
-			templateUrl: appInfo.template_directory + 'app/home/home.php'
+			templateUrl: appInfo.template_directory + 'app/home/home.html'
 		})
 		.state( 'about', {
 			url: '/about',
