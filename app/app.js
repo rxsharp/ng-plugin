@@ -42,6 +42,7 @@
 		$scope.posts = res;
 		$scope.$broadcast('dataloaded');
 		console.log('Broadcast of dataloaded');
+		console.log($scope.posts.acf)
 	});
 	$scope.init();
 	

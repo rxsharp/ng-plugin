@@ -5,6 +5,20 @@
     position: relative;
 }
 
+.projectSnap {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.viewProject {
+    position: absolute;
+    bottom: 2vh;
+    right: 3vw;
+    text-shadow: -2px 1px 0px rgba(38,38,38, .1);
+    font-size: 3.5em;
+}
+
 /*INDIVIDUAL CONTENT*/
 .individualPortfolioPage {
     width: 100vw;
@@ -30,10 +44,6 @@
     font-size: 25vh;
     position: absolute;
     color: #fff;
-}
-
-.section-class-name {
-    position: relative;
 }
 
 .projectTitle, .featuredTitle {
