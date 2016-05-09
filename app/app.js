@@ -12,8 +12,7 @@
 	
 // All cosole.log functions are for debugging purposes
 // The console.log functions will be removed in the production phase.
-.controller( 'homeCtrl', ['$scope', '$http', function( $scope, $http) {
-	document.documentElement.scrollTop = document.body.scrollTop = 10;
+.controller( 'homeCtrl', ['$scope', '$http', '$window', function( $scope, $http, $window) {
 	$scope.directory= appInfo.template_directory;
 
 }])
