@@ -2,4 +2,13 @@
     height: 100vh;
     width: 100vw;
     background-color: #1CBCB4;
+    position: relative;
+}
+
+svg#about_selected {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
 }

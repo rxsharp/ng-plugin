@@ -14,7 +14,7 @@
 // The console.log functions will be removed in the production phase.
 .controller( 'homeCtrl', ['$scope', '$http', function( $scope, $http) {
 	document.documentElement.scrollTop = document.body.scrollTop = 10;
-	$scope.mouse= appInfo.template_directory;
+	$scope.directory= appInfo.template_directory;
 
 }])
 
