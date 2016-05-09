@@ -9,19 +9,7 @@
 			controller: 'homeCtrl',
 			templateUrl: appInfo.template_directory + 'app/home/home.html'
 		})
-		.state( 'about', {
-			url: '/about',
-			templateUrl: appInfo.template_directory + 'app/about/about.php'
-		})
-		.state( 'featured', {
-			url: '/featured',
-			controller: 'featuredCtrl',
-			templateUrl: appInfo.template_directory + 'app/featured/featured.php'
-		})
-		.state( 'contact', {
-			url: '/contact',
-			templateUrl: appInfo.template_directory + 'app/contact/contact.php'
-		})
+
 		.state( 'projectsList', {
 			url: '/projects',
 			controller: 'ListCtrl',

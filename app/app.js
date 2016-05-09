@@ -4,7 +4,7 @@
 	'ngResource',
 	'ngAnimate',
 	'postDirectives',
-	'scrollDirectives',
+	'onePageDirectives',
 	'navDirective',
 	'dataFactories'
 	
@@ -12,6 +12,28 @@
 	
 // All cosole.log functions are for debugging purposes
 // The console.log functions will be removed in the production phase.
+.controller( 'homeCtrl', ['$scope', '$http', function( $scope, $http) {
+	document.documentElement.scrollTop = document.body.scrollTop = 10;
+	$scope.mouse= appInfo.template_directory;
+
+}])
+
+.controller( 'featuredCtrl', ['$http', '$rootScope', 'Posts', function($http, $rootScope, Posts) {
+  $http({ method: 'GET', url: appInfo.api_url + 'pages/?slug=home'})
+  .then(function successCallback(response) {
+        $rootScope.featuredPost = response.data[0].acf.featured_post;
+        console.log($rootScope.featuredPost.guid + 'FEATURED CONTROLLER');
+        
+   $rootScope.featuredResource = Posts.get({ ID: $rootScope.featuredPost.ID }, function() {
+    console.log( $rootScope.featuredResource.acf.featured_image + 'THUMBNAIL');
+  	}); // The postThumb variable calls the post API to retreive the acf featured_image    
+
+  }, 
+    function errorCallback(response) {
+        console.log('Pages API failed to load');
+    })
+}])
+
 .controller( 'ListCtrl', ['$scope', 'Posts', '$timeout', function( $scope, Posts, $timeout ) {
 	console.log('ListCtrl Start');
 	$scope.init = function() {
@@ -33,34 +55,6 @@
 	});
 }])
 
-.controller( 'homeCtrl', ['$scope', '$http', function( $scope, $http) {
-	document.documentElement.scrollTop = document.body.scrollTop = 10;
-	$scope.mouse= appInfo.template_directory;
-
-}])
-
-.controller( 'featuredCtrl', ['$http', '$rootScope', 'Posts', function($http, $rootScope, Posts) {
-  $http({ method: 'GET', url: appInfo.api_url + 'pages/?slug=home'})
-  .then(function successCallback(response) {
-        $rootScope.featuredPost = response.data[0].acf.featured_post;
-        console.log($rootScope.featuredPost.guid + 'FEATURED CONTROLLER');
-        
-   $rootScope.postThumb = Posts.get({ ID: $rootScope.featuredPost.ID }, function() {
-    console.log( $rootScope.postThumb.acf.featured_image + 'THUMBNAIL');
-  }); // get() returns a single entry     
-        
-        
-    
-  }, 
-    function errorCallback(response) {
-        console.log('Pages API failed to load');
-    })
-  
-  
-    
-    }
-    
-])
 
 .filter( 'to_trusted', ['$sce', function( $sce ){
 	return function( text ) {

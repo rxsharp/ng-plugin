@@ -1,0 +1,53 @@
+.portfolioPage {
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+}
+
+/*INDIVIDUAL CONTENT*/
+.individualPortfolioPage {
+    width: 100vw;
+    height: 100vh;
+}
+
+.individualPortfolioPage iframe {
+    position: absolute;
+    margin-top: 60vh;
+    z-index: 1000;
+    min-height: 100vh;
+}
+
+/*INDIVIDUAL IMAGE*/
+.individualImage {
+    position: absolute;
+    padding: 10vh 20vh;
+}
+
+/*PROJECTS PAGE*/
+.portfolioPage {
+    background-color: blue;
+}
+
+.portfolioLink {
+    bottom: 2vh;
+    right: 1vh;
+    font-size: 25vh;
+    position: absolute;
+    color: #fff;
+}
+
+.section-class-name {
+    position: relative;
+}
+
+.projectTitle {
+    position: absolute;
+    top: 50vh;
+    left: 12vw;
+    color: #fff;
+    z-index: 999;
+    font-size: 6vh;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 50vw;
+}

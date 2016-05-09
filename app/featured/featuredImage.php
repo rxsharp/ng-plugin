@@ -1,1 +1,0 @@
-<img ng-src="{{postThumb.acf.featured_image}}"></img>
