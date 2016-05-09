@@ -48,6 +48,7 @@
 			console.log(event.wheelDelta);
 			console.log('currentPageIndex:', currentPageIndex);
 			console.log('snapLength: ', $snaps.length)
+// 			event.preventDefault();
 		});
 
 		function scroll(scrollingDown) {
@@ -58,10 +59,13 @@
 			if (scrollingDown) {
 				if(currentPageIndex < $snaps.length-1) {
 					currentPageIndex++;
+					$snaps.eq(currentPageIndex-1).addClass('stickyTop');
 					$snaps.eq(currentPageIndex).addClass('sticky');
 				}
 			} else if (currentPageIndex > 0) {
 				$snaps.eq(currentPageIndex).removeClass('sticky');
+			    $snaps.eq(currentPageIndex-1).removeClass('stickyTop');
+
 				currentPageIndex--;
 			}
 
