@@ -1,0 +1,18 @@
+
+		.snap {
+			position: absolute;
+			top: 100% !important;
+			bottom: -100% !important;
+			right: 0;
+			left: 0;
+			height: 100%;
+
+			transition-property: all;
+			transition-duration: .5s;
+			transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+		}
+
+		.sticky {
+			top: 0 !important;
+			bottom: 0 !important;
+		}

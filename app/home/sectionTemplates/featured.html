@@ -1,4 +1,6 @@
 <div id="featured" class="featuredPage" style="background-color: {{featuredResource.acf.background_color}};">
-<img ng-src="{{featuredResource.acf.featured_image}}"></img>
-<h1 ng-bind="featuredResource.title.rendered" class="featuredTitle"></h1>
+<img class="featuredImage" ng-src="{{featuredResource.acf.featured_image}}"></img>
+<h1 class="featuredTop">Featured Project</h1>
+<h2 ng-bind="featuredResource.title.rendered" class="featuredTitle"></h2>
+<h2 class="allProjects"><a ui-sref="projectsList">ALL PROJECTS</a></h2>
 </div>

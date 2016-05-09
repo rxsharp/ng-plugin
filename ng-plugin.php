@@ -77,7 +77,7 @@ run_ng_plugin();
 // Hook in all the important things
 function angular_scripts() {
     // Get plugin stylesheet
-		wp_enqueue_style( 'angular-styles', plugin_dir_url( __FILE__ ) . 'app/css/main.css', array(), '0.3', 'all' );
+		wp_enqueue_style( 'angular-styles', plugin_dir_url( __FILE__ ) . 'app/css/main.css', array(), '0.4', 'all' );
 		wp_enqueue_script( 'angular', plugin_dir_url( __FILE__ ) . 'app/vendor/angular.js', array('jquery'), '0.3', false );
 		wp_enqueue_script( 'ui-router', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-ui-router.js', array('angular'), '0.3', false );
 		wp_enqueue_script( 'angular-resource', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-resource.js', array('angular'), '0.3', false );
