@@ -2,4 +2,36 @@
     height: 100vh;
     width: 100vw;
     background-color: #855FA8;
+    position: relative;
+    color: #fff;
+}
+
+.inTouchBox {
+    position: absolute;
+    top: 40vh;
+    width: 20vw;
+    height: 6vw;
+    margin-left: 20%;
+    font-size: 4vh;
+}
+
+.infoBox {
+    position: absolute;
+    top: 40vh;
+    right: 0;
+    width: 30vw;
+    height: 50%;
+    margin-right: 20%;
+    font-size: 4vh;
+    
+}
+
+.socialIcons {
+    margin: 0px;
+    padding: 0px;
+}
+
+.socialIcons li {
+    list-style-type: none;
+    display: inline;
 }
