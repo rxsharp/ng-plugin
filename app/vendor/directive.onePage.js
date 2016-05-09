@@ -27,11 +27,11 @@
 
 .directive("scrollio", function(){
     yoScrollio = function(scope, element, attrs, $window, $scope) {
-        var $snaps = $('.scrollio');
+        var $snaps = $('.snap');
 	console.log($snaps);
 	console.log('snapDB: ', $snaps.selector);
 		var currentPageIndex = 0;
-		var debounceDuration = 500;
+		var debounceDuration = 1000;
 		var canScroll = true;
 
 		var previousTouchPosition;
@@ -56,7 +56,7 @@
 			}
 
 			if (scrollingDown) {
-				if(currentPageIndex < $snaps.length - 1) {
+				if(currentPageIndex < $snaps.length-1) {
 					currentPageIndex++;
 					$snaps.eq(currentPageIndex).addClass('sticky');
 				}
