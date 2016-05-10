@@ -5,20 +5,30 @@
 @import url('projects.css');
 @import url('nav.css');
 @import url('scroll.css');
-
-
-body, html {
+body,
+html {
     height: 100vh;
     width: 100vw;
     margin: 0px;
-    overflow: hidden;
 }
-/* View Content*/
-.viewContainer {
-    height: 100vh;
-    width: 100vw;
-    background-color: transparent;
-    padding: 0px;
+
+body {
+background-color: #054767;
+}
+a,
+a:hover,
+a:focus {
+	color: #fff !important;
+}
+
+.scrollio {
+/*Main content area for home page*/
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
 .pageContent {
@@ -28,10 +38,4 @@ body, html {
     background-color: transparent !important;
     border: none;
     border-radius: 0px;
-    /*opacity: 0;*/
-    /*z-index: -1;*/
 }
-
-/**{*/
-/*    overflow: hidden;*/
-/*}*/

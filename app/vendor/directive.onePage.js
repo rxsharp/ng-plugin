@@ -31,7 +31,7 @@
 	console.log($snaps);
 	console.log('snapDB: ', $snaps.selector);
 		var currentPageIndex = 0;
-		var debounceDuration = 1000;
+		var debounceDuration = 800;
 		var canScroll = true;
 
 		var previousTouchPosition;

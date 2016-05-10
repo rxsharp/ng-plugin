@@ -1,12 +1,12 @@
-(function () {
- angular.module( 'dataFactories', ['ngResource'])
+(function() {
+	angular.module('dataFactories', ['ngResource'])
 
-.factory( 'Posts', ['$resource', function( $resource ) {
-	return $resource( appInfo.api_url + 'posts/:ID', {
-		ID: '@id'
-	})
-}])
+	.factory('Posts', ['$resource', function($resource) {
+		return $resource(appInfo.api_url + 'posts/:ID', {
+			ID: '@id'
+		})
+	}])
 
 
- 
+
 })();

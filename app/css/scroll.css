@@ -1,25 +1,21 @@
+.snap {
+	position: absolute;
+	top: 100%;
+	bottom: -100%;
+	right: 0;
+	left: 0;
+	transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
 
-		.snap {
-			position: absolute;
-			top: 100% ;
-			bottom: -100% ;
-			right: 0;
-			left: 0;
-			/*height: 100%;*/
+.snap.sticky {
+	top: 0;
+	bottom: 0;
+	z-index: 998;
+}
 
-			transition-property: all;
-			transition-duration: .5s;
-			transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-		}
-
-		.snap.sticky {
-			top: 0 ;
-			bottom: 0;
-			z-index: 998;}
-		
-		
-		.snap.sticky.stickyTop {
-			top: -100%;
-			bottom: 100%;
-
-		}
+.snap.sticky.stickyTop {
+	top: -100%;
+	bottom: 100%;
+}

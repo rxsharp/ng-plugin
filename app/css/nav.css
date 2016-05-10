@@ -1,18 +1,17 @@
-
 /* Nav Links Styles Start */
+
 wa-nav {
+	position: fixed;
+    top: 1vh;
     z-index: 999;
 }
 
-a, a:hover, a:focus {
-    color: #fff !important;
-}
 .navLinks h1 {
 	margin: 0 0 0 0;
 	padding: 2vh 0 0 0;
 }
 
-.navLinks h1 a{
+.navLinks h1 a {
 	font-size: 3vw;
 }
 
@@ -25,6 +24,8 @@ a, a:hover, a:focus {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: bold;
-	margin-left: 2vw ;
+	margin-left: 2vw;
 }
+
+
 /* Nav Links styles end */
