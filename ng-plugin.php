@@ -83,7 +83,7 @@ function angular_scripts() {
 		wp_enqueue_script( 'angular-resource', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-resource.js', array('angular'), '0.3', false );
 		wp_enqueue_script( 'angular-animate', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-animate.js', array('angular'), '0.3', false );
 		wp_enqueue_script( 'directive-posts', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.posts.js', array('angular'), '0.3', false );
-		wp_enqueue_script( 'directive-onePage', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.onePage.js', array('angular'), '0.4', false );
+		wp_enqueue_script( 'directive-onePage', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.onePage.js', array('angular'), '0.5', false );
 		wp_enqueue_script( 'directive-nav', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.nav.js', array('angular'), '0.4', false );
 		wp_enqueue_script( 'factory-api', plugin_dir_url( __FILE__ ) . 'app/wp-api/data.factories.js', array('angular'), '0.4', false );
 		wp_enqueue_script( 'ngScripts', plugin_dir_url( __FILE__ ) . 'app/app.js', array( 'ui-router' ), '1.4', true );

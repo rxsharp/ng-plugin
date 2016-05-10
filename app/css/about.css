@@ -12,3 +12,28 @@ svg#about_selected {
     transform: translate(-50%, -50%);
     width: 80vw;
 }
+
+.tabletContainer {
+    position: absolute;
+    top: 15vh;
+    left: 50vw;
+    transform: translate(-50%);
+    width: 55vw;
+    height: 38vw;
+    z-index: 2;
+    padding: 0px;
+    background-color: transparent;
+}
+
+.contentBox {
+    width: 28vw;
+    position: relative;
+}
+
+p.tabletContent {
+    font-size: 5vh;
+    position: absolute;
+    top: 3vh;
+    left: 3vw;
+    font-weight: 600;
+}
