@@ -9,16 +9,24 @@
     background-size: cover;
     background-attachment: fixed;
     padding: 0px;
+    position: relative;
+    color: #fff;
 }
 
 /* Mouse*/
 
 .mouseContainer {
     text-align: center;
-    position: relative;
-    margin-top: 80vh;
+    position: absolute;
+    top: 85vh;
+    right: 50%;
 }
 
-.mouseIcon {
-    position: relative;
+.headline {
+    position: absolute;
+    top: 40vh;
+    left: 6vw;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
