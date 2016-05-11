@@ -31,9 +31,8 @@
 	console.log($snaps);
 	console.log('snapDB: ', $snaps.selector);
 		var currentPageIndex = 0;
-		var debounceDuration = 800;
+		var debounceDuration = 500;
 		var canScroll = true;
-
 		var previousTouchPosition;
 		window.addEventListener('touchmove', function(event) {
 			if(previousTouchPosition !== undefined) {
@@ -44,11 +43,9 @@
 		});
 
 		window.addEventListener('wheel', function(event) {
-			scroll(event.wheelDelta < 0);
-			console.log(event.wheelDelta);
-			console.log('currentPageIndex:', currentPageIndex);
-			console.log('snapLength: ', $snaps.length)
-// 			event.preventDefault();
+			if (event.wheelDelta > 300 || event.wheelDelta < -300){
+				scroll(event.wheelDelta < 0);
+			}
 		});
 
 		function scroll(scrollingDown) {
@@ -76,7 +73,6 @@
 				previousTouchPosition = undefined;
 			}, debounceDuration);
 		}
-// $scope.$apply();
     }
     
     return {
