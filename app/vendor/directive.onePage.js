@@ -47,12 +47,12 @@
 		}
 	})
 
-	.directive("scrollio", function() {
+	.directive("scrollio", function($rootScope) {
 		yoScrollio = function(scope, element, attrs, $window, $scope) {
 			var $snaps = $('.snap');
 			console.log($snaps);
 			console.log('snapDB: ', $snaps.selector);
-			var currentPageIndex = 0;
+			$rootScope.currentPageIndex = 0;
 			var debounceDuration = 500;
 			var canScroll = true;
 			var previousTouchPosition;
@@ -76,17 +76,17 @@
 				}
 
 				if (scrollingDown) {
-					if (currentPageIndex < $snaps.length - 1) {
-						currentPageIndex++;
-						$snaps.eq(currentPageIndex - 1).addClass('stickyTop');
-						$snaps.eq(currentPageIndex).addClass('sticky');
+					if ($rootScope.currentPageIndex < $snaps.length - 1) {
+						$rootScope.currentPageIndex++;
+						$snaps.eq($rootScope.currentPageIndex - 1).addClass('stickyTop');
+						$snaps.eq($rootScope.currentPageIndex).addClass('sticky');
 					}
 				}
-				else if (currentPageIndex > 0) {
-					$snaps.eq(currentPageIndex).removeClass('sticky');
-					$snaps.eq(currentPageIndex - 1).removeClass('stickyTop');
+				else if ($rootScope.currentPageIndex > 0) {
+					$snaps.eq($rootScope.currentPageIndex).removeClass('sticky');
+					$snaps.eq($rootScope.currentPageIndex - 1).removeClass('stickyTop');
 
-					currentPageIndex--;
+					$rootScope.currentPageIndex--;
 				}
 
 				canScroll = false;
