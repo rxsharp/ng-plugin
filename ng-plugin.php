@@ -16,7 +16,7 @@
  * Plugin Name:       ng-plugin
  * Plugin URI:        rickg.me
  * Description:       An angular app in wordpres
- * Version:           1.5.5
+ * Version:           1.5.6
  * Author:            Rick G
  * Author URI:        rickg.me
  * License:           GPL-2.0+
@@ -77,17 +77,17 @@ run_ng_plugin();
 // Hook in all the important things
 function angular_scripts() {
     // Get plugin stylesheet
-		wp_enqueue_style( 'angular-styles', plugin_dir_url( __FILE__ ) . 'app/css/main.css', array(), '0.4', 'all' );
+		wp_enqueue_style( 'angular-styles', plugin_dir_url( __FILE__ ) . 'app/css/main.css', array(), '0.5', 'all' );
 		wp_enqueue_script( 'angular', plugin_dir_url( __FILE__ ) . 'app/vendor/angular.js', array('jquery'), '0.3', false );
 		wp_enqueue_script( 'ui-router', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-ui-router.js', array('angular'), '0.3', false );
 		wp_enqueue_script( 'angular-resource', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-resource.js', array('angular'), '0.3', false );
 		wp_enqueue_script( 'angular-animate', plugin_dir_url( __FILE__ ) . 'app/vendor/angular-animate.js', array('angular'), '0.3', false );
 		wp_enqueue_script( 'directive-posts', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.posts.js', array('angular'), '0.3', false );
-		wp_enqueue_script( 'directive-onePage', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.onePage.js', array('angular'), '0.6', false );
+		wp_enqueue_script( 'directive-onePage', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.onePage.js', array('angular'), '0.7', false );
 		wp_enqueue_script( 'directive-nav', plugin_dir_url( __FILE__ ) . 'app/vendor/directive.nav.js', array('angular'), '0.4', false );
 		wp_enqueue_script( 'factory-api', plugin_dir_url( __FILE__ ) . 'app/wp-api/data.factories.js', array('angular'), '0.4', false );
-		wp_enqueue_script( 'ngScripts', plugin_dir_url( __FILE__ ) . 'app/app.js', array( 'ui-router' ), '1.4', true );
-		wp_enqueue_script( 'routes', plugin_dir_url( __FILE__ ) . 'app/app.routes.js', array( 'ui-router' ), '1.4', true );
+		wp_enqueue_script( 'ngScripts', plugin_dir_url( __FILE__ ) . 'app/app.js', array( 'ui-router' ), '1.5', true );
+		wp_enqueue_script( 'routes', plugin_dir_url( __FILE__ ) . 'app/app.routes.js', array( 'ui-router' ), '1.5', true );
 		wp_localize_script( 'ngScripts', 'appInfo',
 			array(
 				'home_url'			 => get_site_url() . '/',
