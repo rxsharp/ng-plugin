@@ -4,21 +4,17 @@
 .config( function( $stateProvider, $urlRouterProvider){
 	$urlRouterProvider.otherwise('/');
 	$stateProvider
-		.state( 'home', {
+	
+		.state( 'main', {
 			url: '/',
 			controller: 'homeCtrl',
-			templateUrl: appInfo.template_directory + 'app/home/home.html'
+			templateUrl: appInfo.template_directory + 'app/home/main.html'
 		})
 
-		.state( 'projectsList', {
-			url: '/projects',
+		.state( 'main.projects', {
+			url: 'projectsyo',
 			controller: 'ListCtrl',
-			templateUrl: appInfo.template_directory + 'app/projects/list.php'
-		})
-		.state( 'detail', {
-			url: '/project/:id',
-			controller: 'DetailCtrl',
-			templateUrl: appInfo.template_directory + 'app/projects/individual.php'
+			templateUrl: appInfo.template_directory + 'app/projects/projects.html'
 		});
 });
 

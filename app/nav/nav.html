@@ -1,6 +1,6 @@
 <div class="navLinks">
-    <h1><a ng-click="home();">{{title.name}}</a></h1>
-    <h2><a ng-click="projects();">Projects</a></h2>
-    <h2><a ng-click="about();">About</a></h2>
-    <h2><a ng-click="contact();">Contact</a></h2>
+    <h1><a ng-click="home();" ui-sref="main">{{title.name}}</a></h1>
+    <h2><a ui-sref=".projects">Projects</a></h2>
+    <h2><a ng-click="about();" ui-sref="main">About</a></h2>
+    <h2><a ng-click="contact();" ui-sref="main">Contact</a></h2>
 </div>

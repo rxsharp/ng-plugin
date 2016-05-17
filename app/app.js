@@ -9,6 +9,10 @@
 	'dataFactories'
 	
 	] )
+.run(function($rootScope) {
+    cpi = $rootScope.currentPageIndex = 0;
+    console.log(cpi);
+})
 	
 // All cosole.log functions are for debugging purposes
 // The console.log functions will be removed in the production phase.
@@ -39,10 +43,15 @@
 		console.log('Init run');
 	}
 	Posts.query(function( res ) {
+		$scope.loading = [];
 		$scope.posts = res;
 		$scope.$broadcast('dataloaded');
 		console.log('Broadcast of dataloaded');
-		console.log($scope.posts.acf)
+		console.log('posts', $scope.posts.acf);
+		$scope.popInit = function(input){
+			console.log('Pop initialized');
+		}
+		
 	});
 	$scope.init();
 	

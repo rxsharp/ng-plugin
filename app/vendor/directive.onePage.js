@@ -1,5 +1,15 @@
 (function() {
 	angular.module('onePageDirectives', [])
+
+		.directive("home", function() {
+			return {
+				restrict: "E",
+				templateUrl: appInfo.template_directory + "app/home/sectionTemplates/home.html",
+				controller: "homeCtrl"
+
+			}
+		})
+
 		.directive("featured", function() {
 			return {
 				restrict: "E",
@@ -50,11 +60,9 @@
 	.directive("scrollio", function($rootScope) {
 		yoScrollio = function(scope, element, attrs, $window, $scope) {
 			var $snaps = $('.snap');
-			console.log($snaps);
-			console.log('snapDB: ', $snaps.selector);
-			$rootScope.currentPageIndex = 0;
 			var debounceDuration = 500;
 			var canScroll = true;
+			$rootScope.homeScroll = true;
 			var previousTouchPosition;
 			window.addEventListener('touchmove', function(event) {
 				if (previousTouchPosition !== undefined) {
@@ -65,7 +73,7 @@
 			});
 
 			window.addEventListener('wheel', function(event) {
-				if (event.wheelDelta > 50 || event.wheelDelta < -50) {
+				if (event.wheelDelta > 50 || event.wheelDelta < -50 && $rootScope.homeScroll==true) {
 					scroll(event.wheelDelta < 0);
 				}
 			});
@@ -103,6 +111,5 @@
 			link: yoScrollio
 		}
 	})
-
 
 })();
