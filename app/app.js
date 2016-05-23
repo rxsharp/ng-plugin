@@ -9,10 +9,23 @@
 	'dataFactories'
 	
 	] )
-.run(function($rootScope) {
+.run(function($rootScope, Posts) {
     cpi = $rootScope.currentPageIndex = 0;
     ppi = $rootScope.projectPageIndex = 0;
-    console.log(cpi);
+    console.log('Run, cpi Index: ', cpi);
+    
+    Posts.query(function( res ) {
+		$rootScope.loading = [];
+		$rootScope.posts = res;
+		console.log('Posts on Resolve', $rootScope.posts);
+		$rootScope.$broadcast('dataloaded');
+				$rootScope.$broadcast('dataloaded');
+
+		console.log('Broadcast of dataloaded');
+		// console.log('posts', $scope.posts.acf);
+
+		
+	});
 })
 	
 // All cosole.log functions are for debugging purposes
@@ -34,13 +47,21 @@
     })
 }])
 
-.controller( 'ListCtrl', ['$scope', 'Posts', '$timeout', '$rootScope', function( $scope, Posts, $timeout, $rootScope ) {
-	console.log('ListCtrl Start');
-	$scope.init = function() {
-		console.log('Init ListCtrl');
-	}
-	$scope.init();
-	
+.controller( 'ListCtrl', ['$scope', 'Posts', '$timeout', '$rootScope', 'Projects', '$state', 
+	function( $scope, Posts, $timeout, $rootScope, Projects, $state ) {
+		$timeout(function () { 
+
+		$rootScope.projectSwitch=true;
+	    console.log('FIRST: Project Switch');
+		}, 50);
+
+		console.log('ListCtrl Start');
+	            
+		$scope.init = function() {
+			Projects.scrollify();
+			console.log('THIRD: Init ListCtrl controller, Projects.scrollify');
+		}
+		$scope.init();
 	
 }])
 
@@ -59,27 +80,14 @@ function( $scope, $http, $window, Posts, $timeout, $rootScope, $state) {
 	$http({ method: 'GET', url: appInfo.wp_json})
 	  .then(function successCallback(response) {
 	        $scope.title = response.data;
-	        console.log($scope.title + 'BOOTLOAD load success');
+	        console.log($scope.title + 'BOOTLOAD :: Title load success');
 	    
 	  }, 
 	    function errorCallback(response) {
 	        console.log('API failed to load');
 	    })
 
-//Listing of Projects into ng-repeat
-Posts.query(function( res ) {
-		$scope.loading = [];
-		$scope.posts = res;
-		$scope.$broadcast('dataloaded');
-				$rootScope.$broadcast('dataloaded');
 
-		console.log('Broadcast of dataloaded');
-		console.log('posts', $scope.posts.acf);
-		$scope.popInit = function(input){
-			console.log('Pop initialized');
-		}
-		
-	});
 
 	
 }])
@@ -91,8 +99,10 @@ Posts.query(function( res ) {
 	};
 }]);
 
-angular.element(document).ready(function () {
+angular.element(document).ready(function ($rootScope) {
     console.log('Doc Ready Function');
+    			$rootScope.projectPageIndex=0;
+
 });
  
 })();

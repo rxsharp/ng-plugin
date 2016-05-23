@@ -1,22 +1,17 @@
 (function () {
  angular.module('navDirective', [])
 .directive('waNav', function($rootScope, $location, $state, $timeout) {
-  navControl = function($scope, $http) {
-      $scope.projectGo = function(){
-            //will reload projects
-            // $state.go('main.project')
-// $location.path('/projects')
-            $state.go('main.projects');
-                    // $timeout(function () {
-                        // $state.reload('main.projects');
-//                         console.log('Run Reload');
-// }, 500)
-            console.log('Project Go!');
-            $rootScope.homeScroll=false;
+    navControl = function($scope, $http) {
+        $scope.projectGo = function(){
+        $state.go('main.projects');
+        $rootScope.homeScroll=false;
+            
+        $rootScope.projectSwitch=true;
+        console.log('FIRST: Project switch TRUE on Directive');
       }
     $scope.home = function(){
-        $state.reload('main');
-        $state.go('^');
+        $rootScope.projectSwitch=false;
+        $state.go('main');
         console.log('home reloaded');
         yo= $rootScope.currentPageIndex = 0;
         $rootScope.homeScroll=true;
@@ -27,6 +22,7 @@
     }
 
     $scope.about = function(){
+        $rootScope.projectSwitch=false;
         $state.go('main');
         console.log('ok Rick');
         $rootScope.homeScroll=true
@@ -40,19 +36,20 @@
       	console.log('index', yo);
     }
 
-    $scope.contact = function(){
-        window.setTimeout(function() {
-            $state.go('main');
-            $rootScope.homeScroll=true
-            console.log('contact yo');
-          	$('home').addClass('sticky stickyTop');
-          	$('featured').addClass('sticky stickyTop');
-          	$('about').addClass('sticky stickyTop');
-          	$('contact').addClass('sticky');
-          	yo = $rootScope.currentPageIndex = 3;
-          	console.log('index', yo);
-        }, 0);
-    }
+        $scope.contact = function(){
+            window.setTimeout(function() {
+                $rootScope.projectSwitch=false;
+                $state.go('main');
+                $rootScope.homeScroll=true
+                console.log('contact yo');
+              	$('home').addClass('sticky stickyTop');
+              	$('featured').addClass('sticky stickyTop');
+              	$('about').addClass('sticky stickyTop');
+              	$('contact').addClass('sticky');
+              	yo = $rootScope.currentPageIndex = 3;
+              	console.log('index', yo);
+            }, 0);
+        }
     }
   
   return {

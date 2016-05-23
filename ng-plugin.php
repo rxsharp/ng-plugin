@@ -16,7 +16,7 @@
  * Plugin Name:       ng-plugin
  * Plugin URI:        rickg.me
  * Description:       An angular app in wordpres
- * Version:           1.6.3
+ * Version:           1.6.6
  * Author:            Rick G
  * Author URI:        rickg.me
  * License:           GPL-2.0+

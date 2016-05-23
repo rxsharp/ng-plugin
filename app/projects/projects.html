@@ -1,23 +1,14 @@
 <div class="ui-project">
-<!--<div class="scrollioWrap">-->
-<!--<div class="scrollio" projectscrollio>    -->
-    
-<!--<div class="portfolioPage">-->
-    <wa-nav></wa-nav>
-    <div ng-repeat="post in posts" 
-    class="projectInd shadow"
-    ng-init="loading=[$scope];"
-    style="background-color: {{post.acf.background_color}};">
-        
-        <a class="projectTitle" ui-sref="detail({id: post.id})" ng-bind-html="post.title.rendered | to_trusted"></a>
-        <a ui-sref="detail({id: post.id})">
-            <img class="featuredImage" ng-src="{{post.acf.featured_image}}"></img>
-        </a>
+    <div class="portfolioPage" style="background-color: transparent;">
+        <wa-nav></wa-nav>
+        <div ng-repeat="post in posts" class="projectIndx projectSnap shadow" ng-init="loading=[$scope];" style="background-color: {{post.acf.background_color}};">
 
-        <a class="viewProject" href="#"> View Project </a>
+            <a class="projectTitle" ui-sref="detail({id: post.id})" ng-bind-html="post.title.rendered | to_trusted"></a>
+            <a ui-sref="detail({id: post.id})">
+                <img class="featuredImage" ng-src="{{post.acf.featured_image}}"></img>
+            </a>
+
+            <a class="viewProject" href="#"> View Project </a>
+        </div>
     </div>
-<!--</div>-->
-
-<!--</div>-->
-<!--</div>-->
 </div>
