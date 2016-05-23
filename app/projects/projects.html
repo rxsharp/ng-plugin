@@ -1,8 +1,11 @@
 <div class="ui-project">
-<div class="portfolioPage">
+<!--<div class="scrollioWrap">-->
+<!--<div class="scrollio" projectscrollio>    -->
+    
+<!--<div class="portfolioPage">-->
     <wa-nav></wa-nav>
     <div ng-repeat="post in posts" 
-    class="projectSnap shadow" 
+    class="projectInd shadow"
     ng-init="loading=[$scope];"
     style="background-color: {{post.acf.background_color}};">
         
@@ -11,12 +14,10 @@
             <img class="featuredImage" ng-src="{{post.acf.featured_image}}"></img>
         </a>
 
-        <a class="viewProject" ng-click="loading[$index]=!loading[$index]; popInit();"> View Project: {{$index}} </a>
-        <div class="individualPop" style= "float: right;" ng-show="loading[$index]">
-Show content here!
-            <button ng-click="loading[$index]=false;">HIDE</button>
-        </div>
+        <a class="viewProject" href="#"> View Project </a>
     </div>
-</div>
+<!--</div>-->
 
+<!--</div>-->
+<!--</div>-->
 </div>

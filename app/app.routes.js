@@ -7,14 +7,17 @@
 	
 		.state( 'main', {
 			url: '/',
-			controller: 'homeCtrl',
-			templateUrl: appInfo.template_directory + 'app/home/main.html'
+			controller: 'bootLoad',
+            templateUrl: appInfo.template_directory + 'app/main/main.html'
+	
 		})
 
+
 		.state( 'main.projects', {
-			url: 'projectsyo',
+			url: 'projects',
 			controller: 'ListCtrl',
-			templateUrl: appInfo.template_directory + 'app/projects/projects.html'
+                   templateUrl: appInfo.template_directory + 'app/projects/projects.html'
+
 		});
 });
 

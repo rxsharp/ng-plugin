@@ -1,4 +1,4 @@
-.snap {
+.snap, .projectSnap {
 	position: absolute;
 	top: 100%;
 	bottom: -100%;
@@ -9,13 +9,13 @@
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
-.snap.sticky {
+.snap.sticky, .projectSnap.sticky {
 	top: 0;
 	bottom: 0;
 	z-index: 998;
 }
 
-.snap.sticky.stickyTop {
+.snap.sticky.stickyTop, .projectSnap.sticky.stickyTop {
 	top: -100%;
 	bottom: 100%;
 }

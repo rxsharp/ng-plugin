@@ -4,8 +4,7 @@
 		.directive("home", function() {
 			return {
 				restrict: "E",
-				templateUrl: appInfo.template_directory + "app/home/sectionTemplates/home.html",
-				controller: "homeCtrl"
+				templateUrl: appInfo.template_directory + "app/home/sectionTemplates/home.html"
 
 			}
 		})
@@ -58,8 +57,9 @@
 	})
 
 	.directive("scrollio", function($rootScope) {
-		yoScrollio = function(scope, element, attrs, $window, $scope) {
+		yoScrollio = function(scope, element, attrs, $window, $scope, $state) {
 			var $snaps = $('.snap');
+			console.log('home snap',$snaps);
 			var debounceDuration = 500;
 			var canScroll = true;
 			$rootScope.homeScroll = true;
@@ -73,7 +73,7 @@
 			});
 
 			window.addEventListener('wheel', function(event) {
-				if (event.wheelDelta > 50 || event.wheelDelta < -50 && $rootScope.homeScroll==true) {
+				if (event.wheelDelta > 50 || event.wheelDelta < -50) {
 					scroll(event.wheelDelta < 0);
 				}
 			});
@@ -88,6 +88,8 @@
 						$rootScope.currentPageIndex++;
 						$snaps.eq($rootScope.currentPageIndex - 1).addClass('stickyTop');
 						$snaps.eq($rootScope.currentPageIndex).addClass('sticky');
+						console.log('INDEX CHECK: ', $rootScope.currentPageIndex);
+						console.log('snapLENGTH', $snaps.length);
 					}
 				}
 				else if ($rootScope.currentPageIndex > 0) {
@@ -95,8 +97,11 @@
 					$snaps.eq($rootScope.currentPageIndex - 1).removeClass('stickyTop');
 
 					$rootScope.currentPageIndex--;
-				}
+					console.log('INDEX CHECK: ', $rootScope.currentPageIndex);
+											console.log('snapLENGTH', $snaps.length);
 
+				
+				}
 				canScroll = false;
 
 				window.setTimeout(function() {
